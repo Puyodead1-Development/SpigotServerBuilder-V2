@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link href="../lib/noty.css" rel="stylesheet" />
+    <link href="../lib/themes/metroui.css" rel="stylesheet" />
+    <script src="../lib/noty.js" type="text/javascript"></script>
+    <script src="../lib/jquery-3.4.0.min.js"></script>
+    <script>
+      const settings = require("../lib/settings.json"),
+        fs = require("fs");
+
+      document.addEventListener("DOMContentLoaded", function() {
+        document
+          .getElementById("closeChangelogModal")
+          .addEventListener("click", function() {
+            document.getElementById("changelog-modal").style.display = "none";
+            settings.hasSeenChangelog = true;
+            fs.writeFile(
+              "../lib/settings.json",
+              JSON.stringify(settings),
+              function(err) {
+                if (err) return console.log(err);
+                console.log("Settings changed");
+              }
+            );
+          });
+        document
+          .getElementById("closeChangelogModal2")
+          .addEventListener("click", function() {
+            document.getElementById("changelog-modal").style.display = "none";
+            settings.hasSeenChangelog = true;
+            fs.writeFile(
+              "../lib/settings.json",
+              JSON.stringify(settings),
+              function(err) {
+                if (err) return console.log(err);
+                console.log("Settings changed");
+              }
+            );
+          });
+      });
+    </script>
+    <script src="../lib/rendererMain.js"></script>
+  </head>
+  <body>
+    <!--changelog modal - hidden by default-->
+    <div class="modal" id="changelog-modal" style="margin-top: 5%;">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Changelog</h5>
+            <button
+              type="button"
+              class="close"
+              id="closeChangelogModal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="changelog-data"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="closeChangelogModal2"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+
+    <!--NAV BAR START-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Spigot Server Builder</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarColor01"
+        aria-controls="navbarColor01"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="start.html">Start</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="versions.html">Spigot Versions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="settings.html">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!--NAV BAR END-->
+
+    <!--Jumbotron Start-->
+    <div class="jumbotron" style="text-align: center;">
+      <h1 class="display-3">Welcome!</h1>
+      <p class="lead">
+        SpigotServerBuilder is a simple, easy-to-use, auto-updating tool for
+        creating a Spigot server.
+      </p>
+      <hr class="my-4" />
+      <h3>SpigotServerBuilders Features</h3>
+      <ul style="list-style: inside;">
+        <li>Auto-Updating system</li>
+        <li>Sentry error tracking (can be turned off)</li>
+        <li>
+          Downloading BuildTools if needed or use existing one from previous
+          downloads.
+        </li>
+        <li>Compiles Spigot</li>
+        <li>Moves Spigot JAR to a new folder</li>
+        <li>Creates EULA.txt and accepts it</li>
+        <li>Creates a launcher.bat for easy start</li>
+        <li>List of all Spigot versions</li>
+        <li>Easy to toggle options to fine tune your server build</li>
+      </ul>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="start.html" role="button"
+          >Get Started!</a
+        >
+      </p>
+    </div>
+    <!--Jumbotron END-->
+  </body>
+</html>

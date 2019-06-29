@@ -1,0 +1,9 @@
+node_modules
+Tests
+dist
+.electron-symbols
+dev-app-update.yml
+build
+sentry-symbols.js
+sentry.properties
+.vscode

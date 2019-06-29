@@ -1,0 +1,99 @@
+{
+  "name": "spigotserverbuilder-electron",
+  "version": "1.0.4",
+  "description": "Creates a Spigot Server with ease",
+  "main": "index.js",
+  "dependencies": {
+    "@sentry/electron": "^0.17.1",
+    "devtron": "^1.4.0",
+    "electron-debug": "^2.2.0",
+    "electron-log": "^3.0.5",
+    "electron-settings": "^3.2.0",
+    "electron-updater": "^4.0.6",
+    "moment-timezone": "^0.5.25",
+    "noty": "^3.2.0-beta",
+    "rimraf": "^2.6.3",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "@sentry/cli": "^1.41.1",
+    "electron": "^4.1.4",
+    "electron-builder": "^20.39.0",
+    "electron-builder-squirrel-windows": "^20.40.0",
+    "electron-download": "^4.1.1",
+    "electron-stats-server": "github:tdmio/ess"
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "release": "build --win -p always",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "author": "Puyodead1",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Puyodead1/SpigotServerBuilder-V2.git"
+  },
+  "build": {
+    "appId": "me.puyodead1-development.spigotserverbuilder",
+    "productName": "SpigotServerBuilder",
+    "copyright": "Copyright © 2019 Puyodead1",
+    "asar": true,
+    "icon": "build/icon.ico",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "publish": [
+        {
+          "provider": "github",
+          "owner": "Puyodead1",
+          "repo": "SpigotServerBuilder-V2",
+          "releaseType": "prerelease"
+        }
+      ]
+    },
+    "nsis": {
+      "artifactName": "SpigotServerBuilderV2-${version}.${ext}",
+      "runAfterFinish": true,
+      "shortcutName": "SpigotServerBuilderV2",
+      "oneClick": false,
+      "license": "LICENSE.txt",
+      "deleteAppDataOnUninstall": true,
+      "installerIcon": "build/installerIcon.ico",
+      "uninstallerIcon": "build/uninstallerIcon.ico"
+    },
+    "squirrelWindows": {
+      "iconUrl": "https://www.spigotmc.org/data/resource_icons/63/63097.jpg",
+      "loadingGif": "build/install-spinner.gif"
+    }
+  },
+  "files": [
+    "**/*",
+    "!sentry-symbols.js",
+    "!sentry.properties",
+    "!LICENSE.txt",
+    "!dev-app-update.yml",
+    "!.gitignore",
+    "!Tests${/*}",
+    "!lib/sentry-symbols.js",
+    "!lib/sentry.properties",
+    "!dist${/*}",
+    "!build${/*}",
+    "!.vscode${/*}",
+    "!.electron-symbols${/*}"
+  ]
+}

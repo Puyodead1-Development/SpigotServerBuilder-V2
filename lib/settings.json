@@ -1,0 +1,30 @@
+{
+  "mode": "prod",
+  "hasSeenChangelog": true,
+  "useSentry": true,
+  "theme": "cyborg",
+  "themes": {
+    "default": "https://bootswatch.com/4/cyborg/bootstrap.min.css",
+    "cerulean": "https://bootswatch.com/4/cerulean/bootstrap.min.css",
+    "darkly": "https://bootswatch.com/4/darkly/bootstrap.min.css",
+    "litera": "https://bootswatch.com/4/litera/bootstrap.min.css",
+    "materia": "https://bootswatch.com/4/materia/bootstrap.min.css",
+    "sandstone": "https://bootswatch.com/4/sandstone/bootstrap.min.css",
+    "slate": "https://bootswatch.com/4/slate/bootstrap.min.css",
+    "superhero": "https://bootswatch.com/4/superhero/bootstrap.min.css",
+    "cosmo": "https://bootswatch.com/4/cosmo/bootstrap.min.css",
+    "flatly": "https://bootswatch.com/4/flatly/bootstrap.min.css",
+    "lumen": "https://bootswatch.com/4/lumen/bootstrap.min.css",
+    "minty": "https://bootswatch.com/4/minty/bootstrap.min.css",
+    "simplex": "https://bootswatch.com/4/simplex/bootstrap.min.css",
+    "solar": "https://bootswatch.com/4/solar/bootstrap.min.css",
+    "united": "https://bootswatch.com/4/united/bootstrap.min.css",
+    "cyborg": "https://bootswatch.com/4/cyborg/bootstrap.min.css",
+    "journal": "https://bootswatch.com/4/journal/bootstrap.min.css",
+    "lux": "https://bootswatch.com/4/lux/bootstrap.min.css",
+    "pulse": "https://bootswatch.com/4/pulse/bootstrap.min.css",
+    "sketchy": "https://bootswatch.com/4/sketchy/bootstrap.min.css",
+    "spacelab": "https://bootswatch.com/4/spacelab/bootstrap.min.css",
+    "yeti": "https://bootswatch.com/4/yeti/bootstrap.min.css"
+  }
+}
